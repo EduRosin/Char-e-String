@@ -110,7 +110,7 @@ void textoString()
 
   //* Tamanho de uma string
   int tamanhoMensagem = mensagem.length();
-  Serial.print("tamanho da string e bytes: ");
+  Serial.print("tamanho da string em letras: ");
   Serial.println(tamanhoMensagem);
 
   //* Acessando um caractere em uma posicao especifica
@@ -121,6 +121,37 @@ void textoString()
   //* Tambem é possivel acessar atraves de [] colchetes
 
   //*Localizando texto dentro da string
-  int posicaoTexto =  mensagem.indexOf("curso");
+  int posicaoTexto = mensagem.indexOf("curso");
   Serial.println(posicaoTexto);
+
+  //*Extraindo um texto dentro da string
+  int inicioTextoDesejado = posicaoTexto + 9;
+  Serial.println(mensagem.substring(inicioTextoDesejado, tamanhoMensagem - 1));
+
+  //* substituindo texto da string
+  mensagem.replace("Olá,", "Oi, Tudo bom? ");
+  Serial.println(mensagem);
+
+  //*Convertendo para maiusculas
+  mensagem.toUpperCase();
+  Serial.println(mensagem);
+
+  //* Convertendo para minusculas
+  mensagem.toLowerCase();
+  Serial.println(mensagem);
+
+  //*Converntendo texto numerico para inteiros
+  String textoNumerico = "123456";
+  int numero = textoNumerico.toInt();
+  Serial.println(numero * 2);
+
+  //* Verificando se a string esta vazio
+  String textoExtra = "";
+  if (textoExtra.length() == 0)
+    Serial.println("texto esta vazio");
+
+  //*Convertendo string para const char
+  //* util quando alguma biblioteca exige um texto tipo C
+  const char *textoComoChar = mensagem.c_str();
+  Serial.println(textoComoChar);
 }
