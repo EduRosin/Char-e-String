@@ -93,6 +93,72 @@ void textoChar()
   int idade = atoi(idadeTexto);
   Serial.println(idade);
   Serial.println(idadeTexto);
+
+  //TODO Montando texto
+
+  char buffer[100];
+  char* local = "sala de aula";
+  float temperatura = 26.4;
+  int humidade = 58;
+
+
+  snprintf(buffer, sizeof(buffer), "%s | Temp.: %.1f | Humidade: %d %% \n\r", buffer, temperatura, humidade);
+  Serial.print(buffer);
+
+  //TODO snprintf monta o texto dentro de um vetor char
+  //TODO snprintf(OndeOTextoFicaArmazenado, TamanhoMaximoDoTexto, TextoComFormatacao, ConteudoDoTexto);
+  //TODO util pra salvar um texto grande dentro de uma variavel
+  //TODO enviar pra MQTT(IoT), Display ou Imprimir na Serial
+
+
+  //? EPECIFICADORES
+  //? %d ou %i = Int
+  //? %u ou %lu = Unsigned int/long
+  //? %f = Float
+  //? %c = Char
+  //? %s = Char* (string)
+  //? %g = Float, mais curto
+  //? %x ou %X = Hexadecimal minusculo/maiusculo
+  //? %o = Octal
+  //? %% = O proprio %
+  //? %p = Ponteiro
+  //? %e = Notacao cientifica
+  //?
+  //?
+  //?   FLAG, LARGURA E PRECISÃO
+  //?
+  //? %5d = Imprime com largura MINIMA de 5 alinhado a direita [    4], [  100], [1000000000000]
+  //? %-4d = Imprime com largura MINIMA de 4 alinhado a esquerda [4   ], [100 ], [123456789]
+  //? %03d = Completa com zeros a esquerda [002]
+  //? %+d = Sempre mostra o sinal [+3], [-6]
+  //? %.2f = Duas casas decimais num float [0,02]
+  //? %4.2f = Largura minima de 4 a direita com 2 casas decimais
+  //? %02X = Hexadecimal com 2 digitos [0F] [5A]
+  //? %#x = Imprime o prefixo 0x
+  //? %.3s = Somente os 3 primeiros caracteres da strings
+
+  //? int largura = 3;
+  //? int numero = 9;
+  //? %*d = Largura passada como argumento 
+  //? snprintf(buffer, sizeof(buffer),"numero %*d \n\r" largura, numero)
+  //? Serial.print(buffer) -> [  9]
+  //?
+  
+  //* FORMATADORES DE TEXTO
+  //* 
+  //* 
+  //* \n passa para a proxima linha
+  //* \r volta para o inicio da linha
+  //* \lu retorna unsigned long
+  //* 
+  //* 
+  //* 
+  //* 
+  //* 
+  //* 
+  //*
+  //*
+
 }
 
 void textoString()
